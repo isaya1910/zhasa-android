@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1C1C1E</color>
+    <color name="colorPrimaryDark">#0C0C0C</color>
+    <color name="colorPrimarySecondary">#25252A</color>
+    <color name="colorAccent">#5E81F4</color>
+    <color name="colorAccentDark">#5e63f4</color>
+    <color name="colorTextDisable">#868E96</color>
+    <color name="colorSecondaryText">#ADB5BD</color>
+    <color name="divider">#ADB5BD</color>
+    <color name="white">#FFFFFF</color>
+    <color name="leading1">#69DB7C</color>
+    <color name="leading2">#4DABF7</color>
+    <color name="leading3">#FFD43B</color>
+    <color name="ic_launcher_background">#5E81F4</color>
+</resources>

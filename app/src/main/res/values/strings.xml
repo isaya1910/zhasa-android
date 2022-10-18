@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Zhasa-App</string>
+    <string name="home">Главная</string>
+    <string name="branch">Филиал</string>
+    <string name="analytics">Аналитика</string>
+    <string name="leading1">ОП 1</string>
+    <string name="leading2">ОП 2</string>
+    <string name="leading3">ОП 3</string>
+    <string name="leading_weekly_goal">Ежедневная цель по ОП</string>
+    <string name="no_data">No data</string>
+    <string name="goal">Цель</string>
+</resources>
