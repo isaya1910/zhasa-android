@@ -3,6 +3,7 @@ package com.zhasa_app.ui.main
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -13,7 +14,7 @@ import com.zhasa_app.ui.navigation.MainBottomView
 import com.zhasa_app.ui.navigation.NavigationGraph
 import com.zhasa_app.ui.theme.Colors
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

@@ -1,19 +1,26 @@
 package com.zhasa_app.ui.common
 
+import android.app.DatePickerDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CornerSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.TextField
-import androidx.compose.material.TextFieldColors
-import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.zhasa_app.ui.theme.Colors
+import com.zhasa_app.ui.theme.Fonts
 import com.zhasa_app.ui.theme.Size
 
 @Composable
@@ -69,5 +76,37 @@ fun AmountInputField() {
                 unfocusedBorderColor = Colors.White
             )
         )
+    }
+}
+
+
+@Composable
+fun DateField() {
+    val datePicker = MaterialDatePicker.Builder.datePicker().build()
+
+    val context = LocalContext.current
+    var text by remember { mutableStateOf("") }
+
+    datePicker.addOnPositiveButtonClickListener {
+        text = datePicker.headerText
+    }
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(Size.SPACE_6)
+            .clickable {
+                datePicker.show((context as AppCompatActivity).supportFragmentManager, "")
+            },
+        backgroundColor = Colors.BackgroundColor,
+        border = BorderStroke(Size.SPACE_BORDER, Colors.White),
+    ) {
+        Box(modifier = Modifier.padding(start = Size.SPACE_2)) {
+            Text(
+                text = text,
+                color = Colors.White,
+                modifier = Modifier.align(Alignment.CenterStart),
+                fontSize = Fonts.Normal
+            )
+        }
     }
 }
