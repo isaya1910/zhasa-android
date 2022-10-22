@@ -13,7 +13,9 @@ object Colors {
     val leading1Color = Color(0xff69DB7C)
     val leading2Color = Color(0xff4DABF7)
     val leading3Color = Color(0xffFFD43B)
-    val redColor = Color.Red
+    val PrimaryTextColor = Color(0xfff8f9fa)
+    val SecondaryTextColor = Color(0xFFadb5bd)
+    val RedColor = Color.Red
     val darkColors = darkColors(
         primary = BlackPrimary,
         primaryVariant = BlackPrimaryVariant,

@@ -1,26 +1,24 @@
 package com.zhasa_app.ui.common
 
-import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CornerSize
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.OutlinedTextField
+import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.zhasa_app.ui.theme.Colors
-import com.zhasa_app.ui.theme.Fonts
 import com.zhasa_app.ui.theme.Size
 
 @Composable
@@ -29,7 +27,7 @@ fun WeekInputField() {
         modifier = Modifier
             .background(color = Colors.BackgroundColor)
             .fillMaxWidth()
-            .height(Size.SPACE_6)
+            .height(Size.SPACE_7)
     ) {
         var text by remember { mutableStateOf("") }
         val regex = Regex("([1-9]|[1-4][0-9]|5[0-3])")
@@ -43,7 +41,7 @@ fun WeekInputField() {
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
             colors = TextFieldDefaults.outlinedTextFieldColors(
-                textColor = Color.White,
+                textColor = Colors.PrimaryTextColor,
                 focusedBorderColor = Colors.BlueSecondaryLight,
                 unfocusedBorderColor = Colors.White
             )
@@ -57,7 +55,7 @@ fun AmountInputField() {
         modifier = Modifier
             .background(color = Colors.BackgroundColor)
             .fillMaxWidth()
-            .height(Size.SPACE_6)
+            .height(Size.SPACE_7)
     ) {
         var text by remember { mutableStateOf("") }
         val regex = Regex("[1-9]{1,5}[.]?[1-9]{0,2}")
@@ -71,7 +69,7 @@ fun AmountInputField() {
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
             colors = TextFieldDefaults.outlinedTextFieldColors(
-                textColor = Color.White,
+                textColor = Colors.PrimaryTextColor,
                 focusedBorderColor = Colors.BlueSecondaryLight,
                 unfocusedBorderColor = Colors.White
             )
@@ -101,11 +99,10 @@ fun DateField() {
         border = BorderStroke(Size.SPACE_BORDER, Colors.White),
     ) {
         Box(modifier = Modifier.padding(start = Size.SPACE_2)) {
-            Text(
+            NormalText(
                 text = text,
-                color = Colors.White,
+                textColor = Colors.PrimaryTextColor,
                 modifier = Modifier.align(Alignment.CenterStart),
-                fontSize = Fonts.Normal
             )
         }
     }

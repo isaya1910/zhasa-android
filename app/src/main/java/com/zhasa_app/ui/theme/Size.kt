@@ -3,6 +3,7 @@ package com.zhasa_app.ui.theme
 import androidx.compose.ui.unit.dp
 
 object Size {
+    val SPACE_7 = 56.dp
     val SPACE_BORDER = 1.dp
     val SPACE_MINIMUM = 0.4.dp
     val SPACE_0_2_5 = 2.dp
