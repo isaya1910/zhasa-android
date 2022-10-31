@@ -55,6 +55,7 @@ dependencies {
     implementation(Dependencies.composeViewModel)
     implementation(Dependencies.composeActivity)
     implementation(Dependencies.composeNavigation)
+    implementation(Dependencies.composeMaterialIcons)
     testImplementation(Dependencies.composeUiTest)
     implementation(project(path = ":repository"))
     implementation(Dependencies.mpChartVersion)

@@ -9,14 +9,18 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Card
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.zhasa_app.ui.theme.Colors
 import com.zhasa_app.ui.theme.Size
@@ -77,7 +81,6 @@ fun AmountInputField() {
     }
 }
 
-
 @Composable
 fun DateField() {
     val datePicker = MaterialDatePicker.Builder.datePicker().build()
@@ -105,5 +108,67 @@ fun DateField() {
                 modifier = Modifier.align(Alignment.CenterStart),
             )
         }
+    }
+}
+
+@Composable
+fun EmailInputField() {
+    Box(
+        modifier = Modifier
+            .background(color = Colors.BackgroundColor)
+            .fillMaxWidth()
+            .height(Size.SPACE_7)
+    ) {
+        var text by remember { mutableStateOf("") }
+        OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
+            value = text,
+            onValueChange = {
+                text = it
+            },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                textColor = Colors.PrimaryTextColor,
+                focusedBorderColor = Colors.BlueSecondaryLight,
+                unfocusedBorderColor = Colors.White
+            )
+        )
+    }
+}
+
+@Composable
+fun PasswordInputField() {
+    var isPasswordVisible by rememberSaveable {
+        mutableStateOf(false)
+    }
+    Box(
+        modifier = Modifier
+            .background(color = Colors.BackgroundColor)
+            .fillMaxWidth()
+            .height(Size.SPACE_7)
+    ) {
+        var text by remember { mutableStateOf("") }
+        OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
+            value = text,
+            onValueChange = {
+                text = it
+            },
+            visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                textColor = Colors.PrimaryTextColor,
+                focusedBorderColor = Colors.BlueSecondaryLight,
+                unfocusedBorderColor = Colors.White
+            ),
+            trailingIcon = {
+                val image = if (isPasswordVisible)
+                    Icons.Filled.Visibility
+                else Icons.Filled.VisibilityOff
+                IconButton(onClick = { isPasswordVisible = !isPasswordVisible }) {
+                    Icon(imageVector = image, "")
+                }
+            }
+        )
     }
 }

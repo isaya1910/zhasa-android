@@ -7,5 +7,6 @@ object Dependencies {
     const val composeViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.composeViewModelVersion}"
     const val composeActivity = "androidx.activity:activity-compose:${Versions.composeActivityVersion}"
     const val composeNavigation = "androidx.navigation:navigation-compose:${Versions.composeNavigationVersion}"
+    const val composeMaterialIcons = "androidx.compose.material:material-icons-extended:${Versions.composeBaseVersion}"
     const val mpChartVersion = "com.github.PhilJay:MPAndroidChart:${Versions.mpChartVersion}"
 }
