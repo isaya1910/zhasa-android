@@ -1,5 +1,6 @@
 # zhasa-android
-Presentation layer:
+1. Presentation layer
+
   State: abstract represantation of view state
   
   ViewModel: holds states, communicates with view
@@ -8,11 +9,11 @@ Presentation layer:
   
   Reducer: changes states according to updoming action
 
-Repository layer:
+2. Repository layer
   
   Repository: saves and gets data from local or remote data source
   
-Data layer:
+3. Data layer
   
   Api: defines all REST operations
   
