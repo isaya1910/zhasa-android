@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.zhasa_app.R
 import com.zhasa_app.domain.AmountModel
-import com.zhasa_app.ui.common.HeaderItemView
+import com.zhasa_app.ui.common.views.HeaderItemView
 import com.zhasa_app.ui.leading.models.LeadingStatus
 import com.zhasa_app.ui.leading.models.LeadingTableItem
 import com.zhasa_app.ui.leading.models.LeadingWeekTableModel

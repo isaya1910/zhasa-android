@@ -12,9 +12,9 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.zhasa_app.R
-import com.zhasa_app.ui.common.NormalText
-import com.zhasa_app.ui.common.SemiSmallText
-import com.zhasa_app.ui.common.SmallText
+import com.zhasa_app.ui.common.views.NormalText
+import com.zhasa_app.ui.common.views.SemiSmallText
+import com.zhasa_app.ui.common.views.SmallText
 import com.zhasa_app.ui.leading.models.WeeklyIndicatorProgressModel
 import com.zhasa_app.ui.leading.models.WeeklyIndicatorProgressModels
 import com.zhasa_app.ui.theme.Colors

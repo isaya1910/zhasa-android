@@ -1,4 +1,4 @@
-package com.zhasa_app.ui.common
+package com.zhasa_app.ui.common.views
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text

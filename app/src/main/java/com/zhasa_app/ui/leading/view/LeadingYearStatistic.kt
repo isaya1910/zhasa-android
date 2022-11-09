@@ -9,7 +9,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
 import com.github.mikephil.charting.charts.LineChart
 import com.zhasa_app.ui.charts.setYearData
-import com.zhasa_app.ui.common.NormalText
+import com.zhasa_app.ui.common.views.NormalText
 import com.zhasa_app.ui.leading.WeekLeadingProgressView
 import com.zhasa_app.ui.models.AmountPresentation
 import com.zhasa_app.ui.models.YearWeeksAmountsModel

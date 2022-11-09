@@ -10,7 +10,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.github.mikephil.charting.charts.LineChart
 import com.zhasa_app.ui.charts.setWeekData
 import com.zhasa_app.ui.models.AmountPresentation
-import com.zhasa_app.ui.common.NormalText
+import com.zhasa_app.ui.common.views.NormalText
 import com.zhasa_app.ui.models.WeekAmountsModel
 import com.zhasa_app.ui.utils.WeekDayNumber
 import com.zhasa_app.ui.theme.Colors

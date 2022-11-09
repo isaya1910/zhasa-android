@@ -1,4 +1,4 @@
-package com.zhasa_app.ui.common
+package com.zhasa_app.ui.common.views
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable

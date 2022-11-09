@@ -19,3 +19,4 @@ rootProject.name = "Zhasa-App"
 include ':app'
 include ':repository'
 include ':domain'
+include ':mvi'

@@ -8,9 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.zhasa_app.ui.common.NormalText
-import com.zhasa_app.ui.common.SmallText
-import com.zhasa_app.ui.common.TitleWithSubtitleView
+import com.zhasa_app.ui.common.views.NormalText
+import com.zhasa_app.ui.common.views.SmallText
+import com.zhasa_app.ui.common.views.TitleWithSubtitleView
 import com.zhasa_app.ui.theme.Size
 import com.zhasa_app.ui.users.models.UserModel
 import com.zhasa_app.ui.users.models.UsersList

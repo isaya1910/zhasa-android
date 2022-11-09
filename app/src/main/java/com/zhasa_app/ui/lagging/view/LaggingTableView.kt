@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.zhasa_app.ui.common.HeaderItemView
+import com.zhasa_app.ui.common.views.HeaderItemView
 import com.zhasa_app.ui.lagging.models.LaggingTableModel
 import com.zhasa_app.ui.lagging.models.LaggingYearTableItemsHolder
 import com.zhasa_app.ui.models.AmountPresentation

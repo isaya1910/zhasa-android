@@ -3,9 +3,9 @@ package com.zhasa_app.ui.leading.view
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.zhasa_app.ui.common.AmountInputField
-import com.zhasa_app.ui.common.DateField
-import com.zhasa_app.ui.common.SemiNormalText
+import com.zhasa_app.ui.common.views.AmountInputField
+import com.zhasa_app.ui.common.views.DateField
+import com.zhasa_app.ui.common.views.SemiNormalText
 import com.zhasa_app.ui.theme.Colors
 import com.zhasa_app.ui.theme.Size
 

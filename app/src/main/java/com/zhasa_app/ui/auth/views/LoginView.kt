@@ -3,8 +3,8 @@ package com.zhasa_app.ui.auth.views
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.zhasa_app.ui.common.*
-import com.zhasa_app.ui.theme.Colors
+import com.zhasa_app.ui.common.views.NormalText
+import com.zhasa_app.ui.common.views.PrimaryButton
 import com.zhasa_app.ui.theme.Size
 
 @Composable
@@ -16,18 +16,13 @@ fun LoginView() {
     ) {
         NormalText(text = "Войти")
         Spacer(modifier = Modifier.height(Size.SPACE_2))
-        SmallText(text = "Введите email", textColor = Colors.SecondaryTextColor)
-        Spacer(modifier = Modifier.height(Size.SPACE_0_5))
-        EmailInputField()
+        EmailInputView()
         Spacer(modifier = Modifier.height(Size.SPACE_2))
-        SmallText(text = "Введите пароль", textColor = Colors.SecondaryTextColor)
-        Spacer(modifier = Modifier.height(Size.SPACE_0_5))
-        PasswordInputField()
+         PasswordInputView()
         Spacer(modifier = Modifier.height(Size.SPACE_2))
         PrimaryButton(modifier = Modifier
             .fillMaxWidth()
             .height(Size.SPACE_7), onClick = {
-
         }, text = "Добавить")
     }
 }

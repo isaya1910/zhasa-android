@@ -39,6 +39,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.kotlinCompilerExtensionVersion
     }
+
 }
 
 dependencies {
@@ -46,6 +47,11 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.5.1")
     implementation("com.google.android.material:material:1.6.1")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.testng:testng:6.9.6")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     implementation(Dependencies.composeFoundation)
@@ -60,4 +66,8 @@ dependencies {
     implementation(project(path = ":repository"))
     implementation(Dependencies.mpChartVersion)
     implementation(project(path = ":domain"))
+    implementation(project(path = ":mvi"))
+    testImplementation ("org.junit.jupiter:junit-jupiter-api:5.8.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+
 }
