@@ -8,10 +8,12 @@
   Action: abstract representation of user or system action(for example: open another screen, load list)
   
   Reducer: changes states according to updoming action
+  
+  Middleware: gets and Action, produce State according to business logic. Middleware classes know about Resository later
 
 2. Repository layer
   
-  Repository: saves and gets data from local or remote data source
+  Repository: saves, posts and gets data from local or remote data source
   
 3. Data layer
   
