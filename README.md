@@ -9,13 +9,17 @@
   
   Reducer: changes states according to updoming action
   
-  Middleware: gets and Action, produce State according to business logic. Middleware classes know about Resository later
+  Middleware: gets and Action, produce State according to business logic. Middleware classes know about domain layer
+  
+2. Domain layer
+  Statistic: provide maped, calculated data from the repository layer
+  Date: holds statistic date logic
 
-2. Repository layer
+3. Repository layer
   
   Repository: saves, posts and gets data from local or remote data source
-  
-3. Data layer
+      
+4. Data layer
   
   Api: defines all REST operations
   
