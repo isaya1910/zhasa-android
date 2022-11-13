@@ -8,5 +8,8 @@ object Dependencies {
     const val composeActivity = "androidx.activity:activity-compose:${Versions.composeActivityVersion}"
     const val composeNavigation = "androidx.navigation:navigation-compose:${Versions.composeNavigationVersion}"
     const val composeMaterialIcons = "androidx.compose.material:material-icons-extended:${Versions.composeBaseVersion}"
-    const val mpChartVersion = "com.github.PhilJay:MPAndroidChart:${Versions.mpChartVersion}"
+    const val mpChart = "com.github.PhilJay:MPAndroidChart:${Versions.mpChartVersion}"
+    const val jupiter = "org.junit.jupiter:junit-jupiter-api:${Versions.jupiterVersion}"
+    const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinxCoroutinesCore}"
+    const val composeSystemUiController = "com.google.accompanist:accompanist-systemuicontroller:${Versions.composeSystemUiController}"
 }

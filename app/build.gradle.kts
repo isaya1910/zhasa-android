@@ -7,7 +7,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.zhasa_app"
+        applicationId = "com.zhasaApp"
         minSdk = 26
         targetSdk = 33
         versionCode = 1
@@ -42,6 +42,32 @@ android {
 
 }
 
+val ktlint by configurations.creating
+
+val outputDir = "${project.buildDir}/reports/ktlint/"
+val inputFiles = project.fileTree(mapOf("dir" to "src", "include" to "**/*.kt"))
+
+val ktlintCheck by tasks.creating(JavaExec::class) {
+    inputs.files(inputFiles)
+    outputs.dir(outputDir)
+
+    description = "Check Kotlin code style."
+    classpath = ktlint
+    mainClass.set("com.pinterest.ktlint.Main")
+    // see https://pinterest.github.io/ktlint/install/cli/#command-line-usage for more information
+    args = listOf("src/**/*.kt")
+}
+
+val ktlintFormat by tasks.creating(JavaExec::class) {
+    inputs.files(inputFiles)
+    outputs.dir(outputDir)
+    description = "Fix Kotlin code style deviations."
+    classpath = ktlint
+    mainClass.set("com.pinterest.ktlint.Main")
+    // see https://pinterest.github.io/ktlint/install/cli/#command-line-usage for more information
+    args = listOf("-F", "src/**/*.kt")
+}
+
 dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.5.1")
@@ -62,12 +88,18 @@ dependencies {
     implementation(Dependencies.composeActivity)
     implementation(Dependencies.composeNavigation)
     implementation(Dependencies.composeMaterialIcons)
+    implementation(Dependencies.composeSystemUiController)
     testImplementation(Dependencies.composeUiTest)
     implementation(project(path = ":repository"))
-    implementation(Dependencies.mpChartVersion)
+    implementation(Dependencies.mpChart)
     implementation(project(path = ":domain"))
     implementation(project(path = ":mvi"))
-    testImplementation ("org.junit.jupiter:junit-jupiter-api:5.8.2")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+    testImplementation (Dependencies.jupiter)
+    testImplementation(Dependencies.coroutinesCore)
+    ktlint("com.pinterest:ktlint:0.47.1") {
 
+        attributes {
+            attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling.EXTERNAL))
+        }
+    }
 }
