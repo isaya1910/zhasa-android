@@ -3,11 +3,10 @@ package com.zhasaApp.ui.common.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.zhasa.mvi.*
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-abstract class BaseViewModel<S : State, A : Action> :
+abstract class BaseViewModel<S : State, A : Action>(private val dispatcherProvider: DispatcherProvider) :
     ViewModel() {
     abstract val stateFlow: MutableStateFlow<S>
     protected abstract val actionFlow: MutableSharedFlow<A>
@@ -16,13 +15,13 @@ abstract class BaseViewModel<S : State, A : Action> :
     protected abstract val actionFilter: (action: A) -> Boolean
 
     fun obtainAction(action: A) {
-        viewModelScope.launch(Dispatchers.Unconfined) {
+        viewModelScope.launch(dispatcherProvider.io) {
             actionFlow.emit(action)
         }
     }
 
     fun bind() {
-        viewModelScope.launch(Dispatchers.Unconfined) {
+        viewModelScope.launch(dispatcherProvider.io) {
             actionFlow.filter { actionFilter(it) }.collect { a ->
                 val reduced = reducer.reduce(a, stateFlow.value)
                 stateFlow.value = reduced

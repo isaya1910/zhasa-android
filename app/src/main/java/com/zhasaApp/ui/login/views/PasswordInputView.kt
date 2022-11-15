@@ -21,7 +21,7 @@ import com.zhasaApp.ui.theme.Colors
 import com.zhasaApp.ui.theme.Size
 
 @Composable
-fun PasswordInputView() {
+fun PasswordInputView(password: MutableState<String>) {
     var isPasswordVisible by rememberSaveable {
         mutableStateOf(false)
     }
@@ -34,19 +34,19 @@ fun PasswordInputView() {
                 .fillMaxWidth()
                 .height(Size.SPACE_7)
         ) {
-            var text by remember { mutableStateOf("") }
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
-                value = text,
+                value = password.value,
                 onValueChange = {
-                    text = it
+                    password.value = it
                 },
                 visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     textColor = Colors.PrimaryTextColor,
                     focusedBorderColor = Colors.BlueSecondaryLight,
-                    unfocusedBorderColor = Colors.White
+                    unfocusedBorderColor = Colors.White,
+                    cursorColor = Colors.White
                 ),
                 trailingIcon = {
                     val image = if (isPasswordVisible) {

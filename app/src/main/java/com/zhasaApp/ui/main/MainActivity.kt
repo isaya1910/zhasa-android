@@ -10,20 +10,24 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.zhasaApp.ui.login.viewmodels.LoginViewModel
 import com.zhasaApp.ui.login.views.LoginView
 import com.zhasaApp.ui.theme.Colors
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
+        val loginViewModel: LoginViewModel by viewModel()
+        loginViewModel.bind()
         setContent {
             val systemUIController = rememberSystemUiController()
             systemUIController.setSystemBarsColor(Color.Transparent)
             MaterialTheme(colors = Colors.darkColors) {
                 val isLogin by remember { mutableStateOf(true) }
                 if (isLogin) {
-                    LoginView()
+                    LoginView(loginViewModel)
                 }
             }
         }

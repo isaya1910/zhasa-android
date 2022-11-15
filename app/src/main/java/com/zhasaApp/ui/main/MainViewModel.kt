@@ -2,9 +2,10 @@ package com.zhasaApp.ui.main
 
 import com.zhasa.mvi.MiddleWare
 import com.zhasa.mvi.Reducer
+import com.zhasaApp.repository.UserState
 import com.zhasaApp.repository.auth.AuthRepository
-import com.zhasaApp.repository.result.RequestResult
 import com.zhasaApp.ui.common.viewmodel.BaseViewModel
+import com.zhasaApp.ui.common.viewmodel.DispatcherProvider
 import com.zhasaApp.ui.main.models.MainAction
 import com.zhasaApp.ui.main.models.MainState
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -24,8 +25,8 @@ class MainReducer : Reducer<MainAction, MainState> {
 class MainMiddleWare(private val authRepository: AuthRepository) : MiddleWare<MainAction> {
     override suspend fun effect(action: MainAction): MainAction {
         when (authRepository.user.value) {
-            is RequestResult.Error -> return MainAction.SignIn
-            is RequestResult.Success<*> -> return MainAction.SignOut
+            is UserState.SignIn -> MainAction.SignIn
+            UserState.SignOut -> MainAction.SignOut
         }
         return MainAction.NoAction
     }
@@ -33,8 +34,9 @@ class MainMiddleWare(private val authRepository: AuthRepository) : MiddleWare<Ma
 
 class MainViewModel(
     override val reducer: Reducer<MainAction, MainState>,
-    mainMiddleWare: MiddleWare<MainAction>
-) : BaseViewModel<MainState, MainAction>() {
+    mainMiddleWare: MiddleWare<MainAction>,
+    dispatcherProvider: DispatcherProvider
+) : BaseViewModel<MainState, MainAction>(dispatcherProvider) {
     override val stateFlow: MutableStateFlow<MainState> = MutableStateFlow(MainState.Splash)
 
     val imStateFlow = stateFlow.asStateFlow()

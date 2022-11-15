@@ -1,13 +1,17 @@
 package com.zhasaApp.ui.login.viewmodels
 
 import com.zhasaApp.repository.User
+import com.zhasaApp.repository.UserState
 import com.zhasaApp.repository.auth.AuthRepository
 import com.zhasaApp.repository.result.RequestResult
 import com.zhasaApp.repository.result.RequestResult.*
+import com.zhasaApp.ui.common.viewmodel.DispatcherProvider
 import com.zhasaApp.ui.login.models.LoginAction
 import com.zhasaApp.ui.login.models.LoginState
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.test.*
@@ -34,14 +38,17 @@ class MainCoroutineRule(private val dispatcher: TestDispatcher = StandardTestDis
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
-internal class AuthViewModelTest {
+internal class LoginViewModelTest {
 
     @ExperimentalCoroutinesApi
     @get:Rule
     var mainCoroutineRule = MainCoroutineRule()
 
-    private val authMiddleware: AuthMiddleWare = AuthMiddleWare(
+    private val loginMiddleware: LoginMiddleWare = LoginMiddleWare(
         object : AuthRepository {
+            override val user: StateFlow<UserState>
+                get() = TODO("Not yet implemented")
+
             override suspend fun authenticate(
                 email: String,
                 password: String
@@ -55,7 +62,14 @@ internal class AuthViewModelTest {
         }
     )
 
-    private val testObject: AuthViewModel = AuthViewModel(authMiddleware, AuthReducer())
+    private val testObject: LoginViewModel = LoginViewModel(
+        loginMiddleware,
+        LoginReducer(),
+        object : DispatcherProvider {
+            override val io: CoroutineDispatcher = UnconfinedTestDispatcher()
+            override val main: CoroutineDispatcher = UnconfinedTestDispatcher()
+        }
+    )
 
     @Before
     fun setup() {

@@ -1,4 +1,7 @@
 object Versions {
+    const val dataStoreVersion = "1.0.0"
+    const val logginInterceptor = "4.10.0"
+    const val retrofitVersion = "2.9.0"
     const val jupiterVersion = "5.8.2"
     const val kotlinxCoroutinesCore = "1.6.0"
     const val composeBaseVersion = "1.2.1"
@@ -8,4 +11,6 @@ object Versions {
     const val composeNavigationVersion = "2.5.1"
     const val mpChartVersion = "v3.1.0"
     const val composeSystemUiController = "0.27.0"
+    const val koinVersion = "3.2.2"
+    const val composeKoinVersion = "3.3.0"
 }

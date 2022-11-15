@@ -12,4 +12,11 @@ object Dependencies {
     const val jupiter = "org.junit.jupiter:junit-jupiter-api:${Versions.jupiterVersion}"
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinxCoroutinesCore}"
     const val composeSystemUiController = "com.google.accompanist:accompanist-systemuicontroller:${Versions.composeSystemUiController}"
+    const val composeKoin = "io.insert-koin:koin-androidx-compose:${Versions.composeKoinVersion}"
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
+    const val koin = "io.insert-koin:koin-core:${Versions.koinVersion}"
+    const val gsonRetrofit = "com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}"
+    const val retrofitLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.logginInterceptor}"
+    const val dataStore = "androidx.datastore:datastore-preferences:${Versions.dataStoreVersion}"
+
 }

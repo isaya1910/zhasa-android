@@ -13,7 +13,7 @@ import com.zhasaApp.ui.theme.Colors
 import com.zhasaApp.ui.theme.Size
 
 @Composable
-fun EmailInputView() {
+fun EmailInputView(email: MutableState<String>) {
     Column(modifier = Modifier.fillMaxWidth()) {
         SmallText(text = "Введите email", textColor = Colors.SecondaryTextColor)
         Spacer(modifier = Modifier.height(Size.SPACE_0_5))
@@ -23,18 +23,18 @@ fun EmailInputView() {
                 .fillMaxWidth()
                 .height(Size.SPACE_7)
         ) {
-            var text by remember { mutableStateOf("") }
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
-                value = text,
+                value = email.value,
                 onValueChange = {
-                    text = it
+                    email.value = it
                 },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     textColor = Colors.PrimaryTextColor,
                     focusedBorderColor = Colors.BlueSecondaryLight,
-                    unfocusedBorderColor = Colors.White
+                    unfocusedBorderColor = Colors.White,
+                    cursorColor = Colors.White
                 )
             )
         }

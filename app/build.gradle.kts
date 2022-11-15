@@ -97,9 +97,10 @@ dependencies {
     testImplementation (Dependencies.jupiter)
     testImplementation(Dependencies.coroutinesCore)
     ktlint("com.pinterest:ktlint:0.47.1") {
-
         attributes {
             attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling.EXTERNAL))
         }
     }
+    implementation (Dependencies.composeKoin)
+    implementation(project(path=":data"))
 }
