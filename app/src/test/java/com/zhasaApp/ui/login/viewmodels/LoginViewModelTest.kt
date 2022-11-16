@@ -1,7 +1,6 @@
 package com.zhasaApp.ui.login.viewmodels
 
-import com.zhasaApp.repository.User
-import com.zhasaApp.repository.UserState
+import com.zhasaApp.repository.AuthState
 import com.zhasaApp.repository.auth.AuthRepository
 import com.zhasaApp.repository.result.RequestResult
 import com.zhasaApp.repository.result.RequestResult.*
@@ -46,15 +45,15 @@ internal class LoginViewModelTest {
 
     private val loginMiddleware: LoginMiddleWare = LoginMiddleWare(
         object : AuthRepository {
-            override val user: StateFlow<UserState>
+            override val user: StateFlow<AuthState>
                 get() = TODO("Not yet implemented")
 
             override suspend fun authenticate(
                 email: String,
                 password: String
-            ): RequestResult<User> {
+            ): RequestResult<AuthState.SignIn> {
                 if (email == "test" && password == "test") {
-                    return Success(User("", "", ""))
+                    return Success(AuthState.SignIn(""))
                 }
 
                 return Error("error")

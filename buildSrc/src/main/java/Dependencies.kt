@@ -17,6 +17,6 @@ object Dependencies {
     const val koin = "io.insert-koin:koin-core:${Versions.koinVersion}"
     const val gsonRetrofit = "com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}"
     const val retrofitLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.logginInterceptor}"
+    const val dataStoreCore = "androidx.datastore:datastore-preferences-core:${Versions.dataStoreVersion}"
     const val dataStore = "androidx.datastore:datastore-preferences:${Versions.dataStoreVersion}"
-
 }

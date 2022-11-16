@@ -1,9 +1,10 @@
 package com.zhasaApp.data.di
 
 import com.zhasaApp.data.api.Api
+import com.zhasaApp.data.local.PreferencesTokenStorage
+import com.zhasaApp.data.local.TokenStorage
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -12,6 +13,9 @@ val dataModule = module {
     factory { provideHttpClient() }
     factory { provideRetrofit(get(), "https://zhasa-app.kz") }
     factory { provideApi(get()) }
+    single<TokenStorage> {
+        PreferencesTokenStorage(get())
+    }
 }
 
 fun provideHttpClient(): OkHttpClient =

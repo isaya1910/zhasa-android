@@ -2,7 +2,7 @@ package com.zhasaApp.ui.main
 
 import com.zhasa.mvi.MiddleWare
 import com.zhasa.mvi.Reducer
-import com.zhasaApp.repository.UserState
+import com.zhasaApp.repository.AuthState
 import com.zhasaApp.repository.auth.AuthRepository
 import com.zhasaApp.ui.common.viewmodel.BaseViewModel
 import com.zhasaApp.ui.common.viewmodel.DispatcherProvider
@@ -11,6 +11,7 @@ import com.zhasaApp.ui.main.models.MainState
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
 
 class MainReducer : Reducer<MainAction, MainState> {
     override fun reduce(action: MainAction, state: MainState): MainState {
@@ -24,9 +25,9 @@ class MainReducer : Reducer<MainAction, MainState> {
 
 class MainMiddleWare(private val authRepository: AuthRepository) : MiddleWare<MainAction> {
     override suspend fun effect(action: MainAction): MainAction {
-        when (authRepository.user.value) {
-            is UserState.SignIn -> MainAction.SignIn
-            UserState.SignOut -> MainAction.SignOut
+        when (authRepository.user.first()) {
+            is AuthState.SignIn -> MainAction.SignIn
+            AuthState.SignOut -> MainAction.SignOut
         }
         return MainAction.NoAction
     }

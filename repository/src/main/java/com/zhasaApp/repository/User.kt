@@ -6,7 +6,7 @@ data class User(
     val secondName: String
 )
 
-sealed class UserState {
-    data class SignIn(val user: User): UserState()
-    object SignOut: UserState()
+sealed class AuthState {
+    data class SignIn(val token: String): AuthState()
+    object SignOut: AuthState()
 }
