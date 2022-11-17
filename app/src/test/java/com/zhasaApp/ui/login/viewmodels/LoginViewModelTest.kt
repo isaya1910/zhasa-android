@@ -58,6 +58,10 @@ internal class LoginViewModelTest {
 
                 return Error("error")
             }
+
+            override suspend fun authState(): AuthState {
+                TODO("Not yet implemented")
+            }
         }
     )
 

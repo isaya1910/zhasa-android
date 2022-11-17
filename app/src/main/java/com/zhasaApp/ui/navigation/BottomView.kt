@@ -17,9 +17,9 @@ import com.zhasaApp.ui.theme.Colors
 fun MainBottomView(navController: NavController) {
     BottomNavigation(backgroundColor = Colors.BackgroundColor, contentColor = Color.White) {
         val items = listOf(
-            NavigationModel.Home,
-            NavigationModel.Branch,
-            NavigationModel.Analytics
+            BottomMenuNavigationModel.Home,
+            BottomMenuNavigationModel.Branch,
+            BottomMenuNavigationModel.Analytics
         )
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route

@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.zhasaApp.ui.navigation.MainBottomView
-import com.zhasaApp.ui.navigation.NavigationGraph
+import com.zhasaApp.ui.navigation.BottomMenuNavigationGraph
+import com.zhasaApp.ui.theme.Colors
 import com.zhasaApp.ui.theme.Size
 
 @Composable
@@ -22,7 +22,8 @@ fun MainView() {
     systemUIController.setSystemBarsColor(Color.Transparent)
     val navController = rememberNavController()
     Scaffold(
-        bottomBar = { MainBottomView(navController) },
+        backgroundColor = Colors.BlackPrimary,
+        bottomBar = { },
         floatingActionButtonPosition = FabPosition.Center,
         floatingActionButton = {
             FloatingActionButton(
@@ -43,7 +44,7 @@ fun MainView() {
                 .fillMaxSize()
                 .padding(top = Size.SPACE_3)
         ) {
-            NavigationGraph(navController = navController)
+            BottomMenuNavigationGraph(navController = navController)
         }
         it.calculateTopPadding()
     }
