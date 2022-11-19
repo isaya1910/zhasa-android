@@ -7,8 +7,11 @@ import java.text.DecimalFormat
 value class Percentage(
     private val value: Float
 ) {
+
+    fun progress(): Float = value/100
+
     fun print(): String {
         val df = DecimalFormat("#.##")
-        return df.format(value)
+        return "${df.format(value)}$"
     }
 }

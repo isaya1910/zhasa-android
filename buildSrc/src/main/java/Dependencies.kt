@@ -19,4 +19,6 @@ object Dependencies {
     const val retrofitLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.logginInterceptor}"
     const val dataStoreCore = "androidx.datastore:datastore-preferences-core:${Versions.dataStoreVersion}"
     const val dataStore = "androidx.datastore:datastore-preferences:${Versions.dataStoreVersion}"
+    const val composePager = "com.google.accompanist:accompanist-pager:${Versions.composePagerVersion}"
+    const val composePageIndicator = "com.google.accompanist:accompanist-pager-indicators:${Versions.composePagerVersion}"
 }

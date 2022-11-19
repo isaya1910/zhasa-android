@@ -13,4 +13,5 @@ object Versions {
     const val composeSystemUiController = "0.27.0"
     const val koinVersion = "3.2.2"
     const val composeKoinVersion = "3.3.0"
+    const val composePagerVersion = "0.27.1"
 }

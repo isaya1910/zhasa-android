@@ -103,4 +103,6 @@ dependencies {
     }
     implementation (Dependencies.composeKoin)
     implementation(project(path=":data"))
+    implementation(Dependencies.composePager)
+    implementation(Dependencies.composePageIndicator)
 }

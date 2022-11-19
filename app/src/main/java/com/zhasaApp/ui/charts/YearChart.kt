@@ -18,7 +18,7 @@ fun toLineChartEntry(week: YearWeekNumber, leadingModel: Amount): Entry = Entry(
     leadingModel.amount.toFloat()
 )
 
-fun LineChart.setYearData(
+fun LineChart.setLeadingYearData(
     weekAmountsModel1: YearWeeklyAmounts,
     weekAmountsModel2: YearWeeklyAmounts,
     weekAmountsModel3: YearWeeklyAmounts
@@ -59,22 +59,56 @@ fun LineChart.setYearData(
         setMaxVisibleValueCount(10)
     }
 
-    this@setYearData.axisLeft.apply {
+    this@setLeadingYearData.axisLeft.apply {
         isEnabled = false
     }
-    this@setYearData.axisRight.apply {
+    this@setLeadingYearData.axisRight.apply {
         textColor = white
     }
 
-    this@setYearData.xAxis.apply {
+    this@setLeadingYearData.xAxis.apply {
         textColor = white
         textSize = 8f
         setNoDataTextColor(white)
         setNoDataText(context.getString(R.string.no_data))
     }
-    this@setYearData.data = LineData(
+    this@setLeadingYearData.data = LineData(
         dataSet1,
         dataSet2,
         dataSet3
+    )
+}
+
+fun LineChart.setLaggingYearData(
+    weekAmountsModel1: YearWeeklyAmounts
+) {
+    val data1 = weekAmountsModel1.map { amountModel, day ->
+        toLineChartEntry(day, amountModel)
+    }
+
+    val dataSet1 = LineDataSet(data1, "").apply {
+        color = leading1Color
+        mode = LineDataSet.Mode.CUBIC_BEZIER
+        valueTextSize = 10f
+        valueTextColor = white
+        lineWidth = 3F
+        setMaxVisibleValueCount(10)
+    }
+
+    this@setLaggingYearData.axisLeft.apply {
+        isEnabled = false
+    }
+    this@setLaggingYearData.axisRight.apply {
+        textColor = white
+    }
+
+    this@setLaggingYearData.xAxis.apply {
+        textColor = white
+        textSize = 8f
+        setNoDataTextColor(white)
+        setNoDataText(context.getString(R.string.no_data))
+    }
+    this@setLaggingYearData.data = LineData(
+        dataSet1
     )
 }

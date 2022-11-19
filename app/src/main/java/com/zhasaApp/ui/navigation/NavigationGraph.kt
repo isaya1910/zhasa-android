@@ -9,10 +9,10 @@ import com.zhasaApp.ui.login.views.LoginView
 import com.zhasaApp.ui.main.views.MainView
 import com.zhasaApp.ui.screens.analytics.AnalyticsScreen
 import com.zhasaApp.ui.screens.branch.BranchScreen
-import com.zhasaApp.ui.screens.home.HomeScreen
 import com.zhasaApp.ui.splash.models.SplashAction
 import com.zhasaApp.ui.splash.viewmodels.SplashViewModel
 import com.zhasaApp.ui.splash.views.SplashView
+import com.zhasaApp.ui.statistic.StatisticScreen
 
 @Composable
 fun RootNavigationGraph(
@@ -44,7 +44,7 @@ fun BottomMenuNavigationGraph(navController: NavHostController) {
         startDestination = BottomMenuNavigationModel.Home.route
     ) {
         composable(BottomMenuNavigationModel.Home.route) {
-            HomeScreen()
+            StatisticScreen()
         }
         composable(BottomMenuNavigationModel.Branch.route) {
             BranchScreen()

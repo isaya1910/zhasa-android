@@ -11,7 +11,7 @@ import com.github.mikephil.charting.charts.LineChart
 import com.zhasaApp.domain.Amount
 import com.zhasaApp.domain.models.YearWeekNumber
 import com.zhasaApp.domain.models.YearWeeklyAmounts
-import com.zhasaApp.ui.charts.setYearData
+import com.zhasaApp.ui.charts.setLeadingYearData
 import com.zhasaApp.ui.common.views.NormalText
 import com.zhasaApp.ui.theme.Colors
 import com.zhasaApp.ui.theme.Size
@@ -20,8 +20,6 @@ import com.zhasaApp.ui.theme.Size
 @Preview
 fun LeadingYearStatistic() {
     Column(modifier = Modifier.fillMaxWidth()) {
-        WeekLeadingProgressView()
-        Spacer(modifier = Modifier.height(Size.SPACE_2))
         Column(
             modifier = Modifier.background(
                 color = Colors.BackgroundColor,
@@ -40,12 +38,13 @@ fun LeadingYearStatistic() {
                         .height(Size.SPACE_24),
                     factory = { context ->
                         LineChart(context).apply {
-                            setYearData(
+                            setLeadingYearData(
                                 YearWeeklyAmounts().apply {
                                     put(YearWeekNumber(3), Amount(100500))
                                 },
                                 YearWeeklyAmounts().apply {
                                     put(YearWeekNumber(4), Amount(120000))
+                                    put(YearWeekNumber(10), Amount(110000))
                                 },
                                 YearWeeklyAmounts().apply {
                                     put(YearWeekNumber(10), Amount(812000))

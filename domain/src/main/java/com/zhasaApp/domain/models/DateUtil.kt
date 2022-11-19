@@ -13,7 +13,6 @@ value class WeekDates(val dates: List<String>) {
     }
 }
 
-
 @JvmInline
 value class WeekDayNumber(val dayNumber: Int) {
     init {
@@ -21,7 +20,6 @@ value class WeekDayNumber(val dayNumber: Int) {
         require(dayNumber < 7)
     }
 }
-
 
 @JvmInline
 value class YearWeekNumber(val number: Int) {

@@ -17,6 +17,10 @@ object Size {
     val SPACE_8 = 64.dp
     val SPACE_9 = 72.dp
     val SPACE_10 = 80.dp
+    val SPACE_11 = 88.dp
     val SPACE_12 = 96.dp
+    val SPACE_13 = 104.dp
+    val SPACE_14 = 112.dp
+    val SPACE_15 = 120.dp
     val SPACE_24 = 192.dp
 }

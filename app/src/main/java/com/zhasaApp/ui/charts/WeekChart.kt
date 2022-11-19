@@ -24,34 +24,33 @@ fun LineChart.setWeekData(
     weekAmountsModel2: WeekAmounts,
     weekAmountsModel3: WeekAmounts
 ) {
-    val data1 = weekAmountsModel1.map { (day, amount) ->
+    val data1 = weekAmountsModel1.values.map { (day, amount) ->
         toLineChartEntry(day, amount)
     }
-    val data2 = weekAmountsModel2.map { (day, amount) ->
+    val data2 = weekAmountsModel2.values.map { (day, amount) ->
         toLineChartEntry(day, amount)
     }
-    val data3 = weekAmountsModel3.map { (day, amount) ->
+    val data3 = weekAmountsModel3.values.map { (day, amount) ->
         toLineChartEntry(day, amount)
     }
 
     val dataSet1 = LineDataSet(data1, "").apply {
         color = leading1Color
-        mode = LineDataSet.Mode.CUBIC_BEZIER
+        mode = LineDataSet.Mode.HORIZONTAL_BEZIER
         valueTextSize = 10f
         valueTextColor = white
         lineWidth = 3F
     }
-
     val dataSet2 = LineDataSet(data2, "").apply {
         color = leading2Color
-        mode = LineDataSet.Mode.CUBIC_BEZIER
+        mode = LineDataSet.Mode.HORIZONTAL_BEZIER
         valueTextSize = 10f
         valueTextColor = white
         lineWidth = 3f
     }
     val dataSet3 = LineDataSet(data3, "").apply {
         color = leading3Color
-        mode = LineDataSet.Mode.CUBIC_BEZIER
+        mode = LineDataSet.Mode.HORIZONTAL_BEZIER
         valueTextSize = 10f
         valueTextColor = white
         lineWidth = 3f

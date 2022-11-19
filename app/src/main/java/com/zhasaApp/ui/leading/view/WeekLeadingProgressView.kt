@@ -3,7 +3,6 @@ package com.zhasaApp.ui.leading.view
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -13,6 +12,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.zhasaApp.R
 import com.zhasaApp.ui.common.views.NormalText
+import com.zhasaApp.ui.common.views.ProgressView
 import com.zhasaApp.ui.common.views.SemiSmallText
 import com.zhasaApp.ui.common.views.SmallText
 import com.zhasaApp.ui.leading.models.WeeklyIndicatorProgressModel
@@ -110,25 +110,7 @@ fun LeadingWeekProgress(
         SemiSmallText(text = weeklyIndicatorProgressModel.amountAndGoal)
         Spacer(modifier = Modifier.height(Size.SPACE_1))
         Box(modifier = Modifier.size(Size.SPACE_9)) {
-            CircularProgressIndicator(
-                progress = 1f,
-                color = Color.White,
-                modifier = Modifier
-                    .matchParentSize()
-                    .align(
-                        Alignment.Center
-                    )
-            )
-            CircularProgressIndicator(
-                progress = weeklyIndicatorProgressModel.progress,
-                color = leadingColor,
-                modifier = Modifier
-                    .matchParentSize()
-                    .background(Color.Transparent)
-                    .align(
-                        Alignment.Center
-                    )
-            )
+            ProgressView(modifier = Modifier.size(Size.SPACE_9), progress = weeklyIndicatorProgressModel.progress, color = leadingColor)
             SmallText(text = "40%", modifier = Modifier.align(Alignment.Center))
         }
         Spacer(modifier = Modifier.height(Size.SPACE_1))

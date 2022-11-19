@@ -95,7 +95,7 @@ fun LeadingTableHeaderItem(
                 .padding(start = 64.dp)
         ) {
             Text(
-                text = leading1Goal.amount.toString(),
+                text = leading1Goal.print(),
                 modifier = Modifier
                     .padding(start = 8.dp)
                     .weight(1f),
@@ -103,7 +103,7 @@ fun LeadingTableHeaderItem(
                 textAlign = TextAlign.Center
             )
             Text(
-                text = leading2Goal.amount.toString(),
+                text = leading2Goal.print(),
                 modifier = Modifier
                     .padding(start = 8.dp)
                     .weight(1f),
@@ -111,7 +111,7 @@ fun LeadingTableHeaderItem(
                 textAlign = TextAlign.Center
             )
             Text(
-                text = leading3Goal.amount.toString(),
+                text = leading3Goal.print(),
                 modifier = Modifier
                     .padding(start = 8.dp)
                     .weight(1f),
