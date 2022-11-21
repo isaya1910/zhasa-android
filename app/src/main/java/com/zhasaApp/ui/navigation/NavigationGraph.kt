@@ -12,7 +12,7 @@ import com.zhasaApp.ui.screens.branch.BranchScreen
 import com.zhasaApp.ui.splash.models.SplashAction
 import com.zhasaApp.ui.splash.viewmodels.SplashViewModel
 import com.zhasaApp.ui.splash.views.SplashView
-import com.zhasaApp.ui.statistic.StatisticScreen
+import com.zhasaApp.ui.statistic.views.StatisticScreen
 
 @Composable
 fun RootNavigationGraph(
