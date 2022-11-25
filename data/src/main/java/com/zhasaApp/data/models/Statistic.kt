@@ -1,11 +1,41 @@
 package com.zhasaApp.data.models
 
+import com.google.gson.annotations.SerializedName
+import java.time.LocalDate
+
 open class BaseListResponse<T>(val values: List<T>)
 
-data class LaggingYearStatistic(val week: Int, val laggingSum: Long, val laggingIndicator: Long)
-data class LeadingYearStatistic(val week: Int, val li1Sum: Long, val li2Sum: Long, val li3Sum: Long)
+data class LaggingYearStatistic(
+    val week: Int,
+    @SerializedName("lagging_indicator_sum")
+    val laggingSum: Long,
+    @SerializedName("lagging_indicator")
+    val laggingIndicator: Long
+)
+
+data class LeadingWeekStatistic(
+    val date: LocalDate,
+    val li1: Long,
+    val li2: Long,
+    val li3: Long
+)
+
+data class LeadingYearStatistic(
+    @SerializedName("date__week")
+    val week: Int,
+    @SerializedName("li1_sum")
+    val li1Sum: Long,
+    @SerializedName("li2_sum")
+    val li2Sum: Long,
+    @SerializedName("li3_sum")
+    val li3Sum: Long
+)
 
 class LaggingYearStatisticResponse(values: List<LaggingYearStatistic>) :
     BaseListResponse<LaggingYearStatistic>(values)
 
-class LeadingYearStatisticResponse(values: List<LeadingYearStatistic>) : BaseListResponse<LeadingYearStatistic>(values)
+class LeadingYearStatisticResponse(values: List<LeadingYearStatistic>) :
+    BaseListResponse<LeadingYearStatistic>(values)
+
+class LeadingWeekStatisticResponse(values: List<LeadingWeekStatistic>) :
+    BaseListResponse<LeadingWeekStatistic>(values)

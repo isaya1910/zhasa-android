@@ -7,33 +7,13 @@ import com.zhasaApp.repository.result.RequestResult
 import com.zhasaApp.ui.common.viewmodel.BaseViewModel
 import com.zhasaApp.ui.common.viewmodel.DispatcherProvider
 import com.zhasaApp.ui.login.models.LoginAction
+import com.zhasaApp.ui.login.models.LoginMiddleWare
+import com.zhasaApp.ui.login.models.LoginReducer
 import com.zhasaApp.ui.login.models.LoginState
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-
-class LoginMiddleWare(private val authRepository: AuthRepository) : MiddleWare<LoginAction> {
-    override suspend fun effect(action: LoginAction): LoginAction {
-        if (action is LoginAction.Login) {
-            return when (authRepository.authenticate(action.email, action.password)) {
-                is RequestResult.Error -> LoginAction.Error
-                is RequestResult.Success -> LoginAction.Succeed
-            }
-        }
-        return LoginAction.NoAction
-    }
-}
-
-class LoginReducer : Reducer<LoginAction, LoginState> {
-    override fun reduce(action: LoginAction, state: LoginState): LoginState =
-        when (action) {
-            is LoginAction.Error -> LoginState.ErrorState("error")
-            is LoginAction.Login -> LoginState.LoadingState
-            is LoginAction.NoAction -> LoginState.InitialState
-            is LoginAction.Succeed -> LoginState.SuccessState
-        }
-}
 
 class LoginViewModel(
     loginMiddleWare: LoginMiddleWare,

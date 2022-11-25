@@ -24,7 +24,7 @@ class StatisticMiddleWareTest {
         }
 
     }
-    val testObject = StatisticMiddleWare(statisticRepository)
+    private val testObject = StatisticMiddleWare(statisticRepository)
 
     @Test
     fun test() = runBlocking {
