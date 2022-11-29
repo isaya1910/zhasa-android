@@ -1,7 +1,7 @@
 package com.zhasaApp.ui.splash.viewmodels
 
-import com.zhasaApp.repository.AuthState
 import com.zhasaApp.repository.auth.AuthRepository
+import com.zhasaApp.repository.models.AuthState
 import com.zhasaApp.repository.result.RequestResult
 import com.zhasaApp.ui.common.viewmodel.DispatcherProvider
 import com.zhasaApp.ui.login.viewmodels.MainCoroutineRule

@@ -2,8 +2,8 @@ package com.zhasaApp.ui.main
 
 import com.zhasa.mvi.MiddleWare
 import com.zhasa.mvi.Reducer
-import com.zhasaApp.repository.AuthState
 import com.zhasaApp.repository.auth.AuthRepository
+import com.zhasaApp.repository.models.AuthState
 import com.zhasaApp.ui.common.viewmodel.BaseViewModel
 import com.zhasaApp.ui.common.viewmodel.DispatcherProvider
 import com.zhasaApp.ui.main.models.MainAction

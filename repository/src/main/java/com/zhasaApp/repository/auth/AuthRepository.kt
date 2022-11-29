@@ -2,7 +2,7 @@ package com.zhasaApp.repository.auth
 
 import com.zhasaApp.data.api.Api
 import com.zhasaApp.data.models.LoginRequest
-import com.zhasaApp.repository.AuthState
+import com.zhasaApp.repository.models.AuthState
 import com.zhasaApp.data.local.TokenStorage
 import com.zhasaApp.repository.result.RequestResult
 import kotlinx.coroutines.delay

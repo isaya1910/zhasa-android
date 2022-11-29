@@ -31,6 +31,21 @@ data class LeadingYearStatistic(
     val li3Sum: Long
 )
 
+data class StatisticYearRequest(
+    val year: Int,
+    val user: Int? = null,
+    val branch: Int? = null,
+    val department: String? = null
+)
+
+data class StatisticWeekRequest(
+    val year: Int,
+    val week: Int,
+    val user: Int? = null,
+    val branch: Int? = null,
+    val department: String? = null
+)
+
 class LaggingYearStatisticResponse(values: List<LaggingYearStatistic>) :
     BaseListResponse<LaggingYearStatistic>(values)
 

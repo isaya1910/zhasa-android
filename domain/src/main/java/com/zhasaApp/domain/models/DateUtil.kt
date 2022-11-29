@@ -29,6 +29,15 @@ value class YearWeekNumber(val number: Int) {
     }
 }
 
+@JvmInline
+value class Year(
+    private val year: Int
+) {
+    fun year(): Int {
+        return year
+    }
+}
+
 interface DateUtil {
     fun getWeekDatesByWeekNumberUtil(yearWeekNumber: YearWeekNumber): WeekDates
     fun getCurrentWeekDates(): WeekDates

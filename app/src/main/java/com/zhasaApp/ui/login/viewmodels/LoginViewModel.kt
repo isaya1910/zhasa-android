@@ -2,8 +2,6 @@ package com.zhasaApp.ui.login.viewmodels
 
 import com.zhasa.mvi.MiddleWare
 import com.zhasa.mvi.Reducer
-import com.zhasaApp.repository.auth.AuthRepository
-import com.zhasaApp.repository.result.RequestResult
 import com.zhasaApp.ui.common.viewmodel.BaseViewModel
 import com.zhasaApp.ui.common.viewmodel.DispatcherProvider
 import com.zhasaApp.ui.login.models.LoginAction
