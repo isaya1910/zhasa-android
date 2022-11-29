@@ -28,6 +28,7 @@ class StatisticMiddleWare(private val statisticRepository: StatisticRepository) 
                 }
                 result1.await()
                 result2.await()
+
                 return@coroutineScope StatisticAction.ShowStatistic(
                     StatisticPresentation(
                         WeekAmounts(),
