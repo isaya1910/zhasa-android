@@ -105,4 +105,6 @@ dependencies {
     implementation(project(path=":data"))
     implementation(Dependencies.composePager)
     implementation(Dependencies.composePageIndicator)
+    testImplementation(Dependencies.koinTestTools)
+    testImplementation(Dependencies.koinTest)
 }

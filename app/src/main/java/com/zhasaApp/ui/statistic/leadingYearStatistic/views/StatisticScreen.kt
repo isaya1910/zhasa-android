@@ -1,4 +1,4 @@
-package com.zhasaApp.ui.statistic.views
+package com.zhasaApp.ui.statistic.leadingYearStatistic.views
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

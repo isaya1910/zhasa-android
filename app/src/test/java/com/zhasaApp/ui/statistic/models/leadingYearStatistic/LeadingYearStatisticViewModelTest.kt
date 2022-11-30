@@ -1,0 +1,3 @@
+package com.zhasaApp.ui.statistic.models.leadingYearStatistic
+
+class LeadingYearStatisticViewModelTest

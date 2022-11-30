@@ -1,4 +1,4 @@
-package com.zhasaApp.ui.di
+package com.zhasaApp.di
 
 import com.zhasaApp.ui.common.viewmodel.DispatcherProvider
 import com.zhasaApp.ui.common.viewmodel.RealDispatcherProvider

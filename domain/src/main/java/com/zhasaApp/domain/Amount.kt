@@ -10,6 +10,10 @@ value class WeekAmounts(val values: HashMap<WeekDayNumber, Amount> = HashMap()) 
             values[WeekDayNumber(i)] = Amount(0)
         }
     }
+
+    fun put(weekDayNumber: WeekDayNumber, amount: Amount) {
+        values[weekDayNumber] = amount
+    }
 }
 
 @JvmInline

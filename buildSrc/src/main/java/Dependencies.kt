@@ -21,4 +21,6 @@ object Dependencies {
     const val dataStore = "androidx.datastore:datastore-preferences:${Versions.dataStoreVersion}"
     const val composePager = "com.google.accompanist:accompanist-pager:${Versions.composePagerVersion}"
     const val composePageIndicator = "com.google.accompanist:accompanist-pager-indicators:${Versions.composePagerVersion}"
+    const val koinTestTools = "io.insert-koin:koin-test:${Versions.koinVersion}"
+    const val koinTest = "io.insert-koin:koin-test-junit4:${Versions.koinVersion}"
 }

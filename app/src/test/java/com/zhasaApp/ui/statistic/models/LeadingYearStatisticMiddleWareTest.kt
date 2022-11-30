@@ -6,11 +6,13 @@ import com.zhasaApp.data.models.LeadingYearStatisticResponse
 import com.zhasaApp.repository.models.Department
 import com.zhasaApp.repository.result.RequestResult
 import com.zhasaApp.repository.statistic.StatisticRepository
+import com.zhasaApp.ui.statistic.leadingYearStatistic.StatisticMapper
+import com.zhasaApp.ui.statistic.leadingYearStatistic.models.LeadingYearStatisticMiddleWare
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Test
 
-class StatisticMiddleWareTest {
+class LeadingYearStatisticMiddleWareTest {
     private val statisticRepository = object : StatisticRepository {
         override suspend fun userLeadingYearStatistic(
             year: Int,
@@ -59,7 +61,7 @@ class StatisticMiddleWareTest {
             TODO("Not yet implemented")
         }
     }
-    private val testObject = StatisticMiddleWare(statisticRepository)
+    private val testObject = LeadingYearStatisticMiddleWare(statisticRepository, StatisticMapper())
 
     @Test
     fun test() = runBlocking {

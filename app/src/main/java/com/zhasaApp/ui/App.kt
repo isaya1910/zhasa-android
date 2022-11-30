@@ -2,8 +2,8 @@ package com.zhasaApp.ui
 
 import android.app.Application
 import com.zhasaApp.data.di.dataModule
+import com.zhasaApp.di.appModule
 import com.zhasaApp.repository.di.repositoryModule
-import com.zhasaApp.ui.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

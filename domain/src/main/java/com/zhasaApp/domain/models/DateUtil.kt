@@ -21,6 +21,9 @@ value class WeekDayNumber(val dayNumber: Int) {
     }
 }
 
+fun LocalDate.toWeekDayNumber(): WeekDayNumber = WeekDayNumber(this.dayOfWeek.value)
+
+
 @JvmInline
 value class YearWeekNumber(val number: Int) {
     init {

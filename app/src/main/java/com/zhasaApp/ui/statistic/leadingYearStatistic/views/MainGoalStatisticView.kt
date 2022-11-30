@@ -1,4 +1,4 @@
-package com.zhasaApp.ui.statistic
+package com.zhasaApp.ui.statistic.leadingYearStatistic.views
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
